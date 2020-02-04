@@ -67,7 +67,7 @@ export default new Router({
                 },
                 {
                     path: 'customer_checkout/:orderId',
-                    name: 'CustomerCheckout',
+                    name: 'CustomerCheckoutId',
                     component: CustomerCheckout,
                 },
                 {
