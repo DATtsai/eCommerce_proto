@@ -9,7 +9,7 @@
         <div class="card border-0 shadow-sm">
           <div
             style="height: 150px; background-size: cover; background-position: center"
-            :style="{backgroundImage: `url(${item.imageUrl})`}"
+            :style="{backgroundImage: `url(${item.image})`}"
           ></div>
           <div class="card-body">
             <span class="badge badge-secondary float-right ml-2">{{ item.category }}</span>
@@ -63,7 +63,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <img :src="product.imageUrl" class="img-fluid" alt />
+            <img :src="product.image" class="img-fluid" alt />
             <blockquote class="blockquote mt-3">
               <p class="mb-0">{{ product.content }}</p>
               <footer class="blockquote-footer text-right">{{ product.description }}</footer>

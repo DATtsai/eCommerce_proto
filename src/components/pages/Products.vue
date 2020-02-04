@@ -84,7 +84,7 @@
               <div class="col-sm-4">
                 <div class="form-group">
                   <label for="image">輸入圖片網址</label>
-                  <input type="text" class="form-control" id="image" v-model="tempProduct.imageUrl" placeholder="請輸入圖片連結"/>
+                  <input type="text" class="form-control" id="image" v-model="tempProduct.image" placeholder="請輸入圖片連結"/>
                 </div>
                 <div class="form-group">
                   <label for="customFile">
@@ -95,7 +95,7 @@
                   <input type="file" id="customFile" class="form-control" ref="files" @change="uploadFile"/>
                 </div>
                 <img
-                  :src="tempProduct.imageUrl"
+                  :src="tempProduct.image"
                   class="img-fluid"
                   alt
                 />
@@ -327,11 +327,11 @@ export default {
         .then((response)=>{
           console.log(response.data);
           if(response.data.success){
-            // 由於imageUrl並非原始定義的屬性，故vue未加上雙向綁定的getter()和setter()，就不會使畫面更新
-            // vm.tempProduct.imageUrl = response.data.imageUrl;
+            // 由於image並非原始定義的屬性，故vue未加上雙向綁定的getter()和setter()，就不會使畫面更新
+            // vm.tempProduct.image = response.data.imageUrl;
             
             // 使用vue.$set()強制寫入雙向綁定
-            vm.$set(vm.tempProduct, 'imageUrl', response.data.imageUrl);
+            vm.$set(vm.tempProduct, 'image', response.data.imageUrl);
           } else{
             vm.$bus.$emit('message:push', response.data.message, 'danger');
           }
